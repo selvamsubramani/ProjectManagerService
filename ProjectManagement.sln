@@ -21,6 +21,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagement.BusinessL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagement.DataLayer", "core\ProjectManagement.DataLayer\ProjectManagement.DataLayer.csproj", "{2F3ECF57-6039-45A9-8554-028D8D05744A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{37CC865B-B34A-4463-8A42-35D1EC1B93D4}"
+	ProjectSection(SolutionItems) = preProject
+		CodeCoverage.bat = CodeCoverage.bat
+		CodeCoverageReport.bat = CodeCoverageReport.bat
+		PerformanceTest.bat = PerformanceTest.bat
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
