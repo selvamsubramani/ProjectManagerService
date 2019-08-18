@@ -147,9 +147,9 @@ namespace ProjectManagement.BusinessLayer
                     IsCompleted = task.IsCompleted,
                     IsParent = task.IsParent,
                     Priority = task.Priority,
-                    UserID = task.Owner?.Id,
+                    UserID = task.Owner != null && task.Owner.Id > 0 ? task.Owner.Id : (int?)null,
                     ProjectID = task.Project.Id,
-                    ParentID = task.Parent?.Id
+                    ParentID = task.Parent != null && task.Parent.Id > 0 ? task.Parent.Id : (int?)null
                 };
         }
     }
