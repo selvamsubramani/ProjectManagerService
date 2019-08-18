@@ -124,8 +124,8 @@ namespace ProjectManagement.BusinessLayer
                 {
                     Id = task.ID,
                     Name = task.Name,
-                    StartDate = task.StartDate.Value,
-                    EndDate = task.EndDate.Value,
+                    StartDate = task.StartDate,
+                    EndDate = task.EndDate,
                     IsCompleted = task.IsCompleted,
                     IsParent = task.IsParent,
                     Priority = task.Priority,

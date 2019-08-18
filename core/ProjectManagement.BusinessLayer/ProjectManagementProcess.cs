@@ -1,4 +1,5 @@
 ﻿using ProjectManagement.DataLayer;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -99,12 +100,14 @@ namespace ProjectManagement.BusinessLayer
                 {
                     Id = project.ID,
                     Name = project.Name,
-                    StartDate = project.StartDate.Value,
-                    EndDate = project.EndDate.Value,
+                    StartDate = project.StartDate,
+                    EndDate = project.EndDate,
                     IsSuspended = project.IsSuspended,
+                    IsDateEnabled = project.StartDate.HasValue,
                     Priority = project.Priority,
+                    NoOfTasks = project.Tasks.Count(),
                     Manager = new UserManagementProcess().ConvertToEntityUser(project.Manager),
-                    Status = project.IsSuspended ? "Suspended" : project.Tasks.All(x => x.IsCompleted) ? "Completed" : "In Progress"
+                    Status = project.IsSuspended ? "Suspended" : project.Tasks.Any() && project.Tasks.All(x => x.IsCompleted) ? "Completed" : "In Progress"
                 };
         }
 
@@ -115,12 +118,13 @@ namespace ProjectManagement.BusinessLayer
                 {
                     ID = project.Id,
                     Name = project.Name,
-                    StartDate = project.StartDate,
-                    EndDate = project.EndDate,
+                    StartDate = project.IsDateEnabled ? project.StartDate : (DateTime?)null,
+                    EndDate = project.IsDateEnabled ? project.EndDate : (DateTime?)null,
                     IsSuspended = project.IsSuspended,
                     Priority = project.Priority,
-                    Manager = new UserManagementProcess().ConvertToDataUser(project.Manager)
+                    ManagerID = project.Manager.Id
                 };
+            
         }
     }
 }
