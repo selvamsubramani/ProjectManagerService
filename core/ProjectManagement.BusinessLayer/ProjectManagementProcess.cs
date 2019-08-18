@@ -103,7 +103,8 @@ namespace ProjectManagement.BusinessLayer
                     EndDate = project.EndDate.Value,
                     IsSuspended = project.IsSuspended,
                     Priority = project.Priority,
-                    Manager = new UserManagementProcess().ConvertToEntityUser(project.Manager)
+                    Manager = new UserManagementProcess().ConvertToEntityUser(project.Manager),
+                    Status = project.IsSuspended ? "Suspended" : project.Tasks.All(x => x.IsCompleted) ? "Completed" : "In Progress"
                 };
         }
 

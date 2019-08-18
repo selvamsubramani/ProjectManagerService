@@ -11,5 +11,6 @@ namespace ProjectManagement.Entities
         public int Priority { get; set; }
         public User Manager { get; set; }
         public bool IsSuspended { get; set; }
+        public string Status { get; set; }
     }
 }
