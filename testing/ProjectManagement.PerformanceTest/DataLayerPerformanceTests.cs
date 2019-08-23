@@ -31,7 +31,6 @@ namespace ProjectManagement.PerformanceTest
 
             var model = new Mock<ProjectManagementDataModel>();
             model.Setup(x => x.Users).Returns(mockUsers.Object);
-            model.Setup(x => x.Database.Initialize(It.IsAny<bool>()));
             connector = new ProjectManagementDataConnector(model.Object);
         }
 

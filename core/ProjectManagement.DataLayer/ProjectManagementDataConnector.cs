@@ -7,13 +7,14 @@ namespace ProjectManagement.DataLayer
     {
         #region Connector Instance
         private readonly ProjectManagementDataModel _model;
-        public ProjectManagementDataConnector(ProjectManagementDataModel model)
+        public ProjectManagementDataConnector(ProjectManagementDataModel model) { }
+        public ProjectManagementDataConnector(ProjectManagementDataModel model, bool initialize)
         {
             _model = model;
-            _model.Database.Initialize(force: false);
+            _model.Database.Initialize(force: initialize);
         }
 
-        private static readonly Lazy<ProjectManagementDataConnector> lazy = new Lazy<ProjectManagementDataConnector>(() => new ProjectManagementDataConnector(new ProjectManagementDataModel()));
+        private static readonly Lazy<ProjectManagementDataConnector> lazy = new Lazy<ProjectManagementDataConnector>(() => new ProjectManagementDataConnector(new ProjectManagementDataModel(), false));
         public static ProjectManagementDataConnector Instance
         {
             get
