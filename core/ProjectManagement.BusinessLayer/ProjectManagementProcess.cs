@@ -13,7 +13,7 @@ namespace ProjectManagement.BusinessLayer
         public ProjectManagementProcess() : this(ProjectManagementDataConnector.Instance) { }
         public ProjectManagementProcess(IProjectManagementDataConnector connector)
         {
-            _connector = connector;
+            _connector = connector;            
         }
         /// <summary>
         /// 

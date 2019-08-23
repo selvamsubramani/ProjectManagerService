@@ -7,7 +7,7 @@ namespace ProjectManagement.DataLayer
     {
         #region Connector Instance
         private readonly ProjectManagementDataModel _model;
-        public ProjectManagementDataConnector(ProjectManagementDataModel model) { }
+        public ProjectManagementDataConnector(ProjectManagementDataModel model) { _model = model; }
         public ProjectManagementDataConnector(ProjectManagementDataModel model, bool initialize)
         {
             _model = model;
