@@ -35,25 +35,25 @@ namespace ProjectManagement.PerformanceTest
         }
 
         [PerfBenchmark(Description = "Project Manager Performance Test", NumberOfIterations = 5,
-            RunMode = RunMode.Throughput, RunTimeMilliseconds = 1000, TestMode = TestMode.Test)]
+            RunMode = RunMode.Throughput, RunTimeMilliseconds = 1000, TestMode = TestMode.Measurement)]
         [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
-        public void GetTasks_MemoryMesaurement()
+        public void GetUsers_MemoryMesaurement()
         {
             output = connector.GetAllUsers().ToList();
         }
 
         [PerfBenchmark(Description = "Project Manager Performance Test", NumberOfIterations = 5,
-            RunMode = RunMode.Throughput, RunTimeMilliseconds = 1000, TestMode = TestMode.Test)]
+            RunMode = RunMode.Throughput, RunTimeMilliseconds = 1000, TestMode = TestMode.Measurement)]
         [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
-        public void GetTasks_GcMesaurement()
+        public void GetUsers_GcMesaurement()
         {
             output = connector.GetAllUsers().ToList();
         }
 
         [PerfBenchmark(Description = "Project Manager Performance Test", NumberOfIterations = 1,
-           RunMode = RunMode.Throughput, RunTimeMilliseconds = 1000, TestMode = TestMode.Test)]
+           RunMode = RunMode.Throughput, RunTimeMilliseconds = 1000, TestMode = TestMode.Measurement)]
         [ElapsedTimeAssertion(MaxTimeMilliseconds = 2000)]
-        public void GetTasks_ElapsedTimeAssertion()
+        public void GetUsers_ElapsedTimeAssertion()
         {
             output = connector.GetAllUsers().ToList();
         }
