@@ -1,5 +1,6 @@
 ﻿using ProjectManagement.BusinessLayer;
 using ProjectManagement.Entities;
+using ProjectManagement.Logging;
 using System;
 using System.Linq;
 using System.Net;
@@ -29,10 +30,12 @@ namespace ProjectManagement.Service.Controllers
                 var result = _process.GetTasks();
                 if (result.Any())
                     return Ok(result);
+                LogHelper.LogWarn("No tasks");
                 return ResponseMessage(new HttpResponseMessage(HttpStatusCode.NoContent));
             }
             catch (Exception ex)
             {
+                LogHelper.LogError(ex);
                 return InternalServerError(ex);
             }
         }

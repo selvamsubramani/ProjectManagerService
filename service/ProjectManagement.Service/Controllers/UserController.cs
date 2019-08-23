@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using ProjectManagement.Logging;
 
 namespace ProjectManagement.Service.Controllers
 {
@@ -28,10 +29,12 @@ namespace ProjectManagement.Service.Controllers
                 var result = _process.GetUsers();
                 if (result.Any())
                     return Ok(result);
+                LogHelper.LogWarn("No users");
                 return ResponseMessage(new HttpResponseMessage(HttpStatusCode.NoContent));
             }
             catch (Exception ex)
             {
+                LogHelper.LogError(ex);
                 return InternalServerError(ex);
             }
         }

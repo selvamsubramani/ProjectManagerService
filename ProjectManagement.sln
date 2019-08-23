@@ -28,6 +28,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		PerformanceTest.bat = PerformanceTest.bat
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagement.Logging", "core\ProjectManagement.Logging\ProjectManagement.Logging.csproj", "{7609DF9B-F57B-4856-8F04-ACBA6D4DA5AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,6 +60,10 @@ Global
 		{2F3ECF57-6039-45A9-8554-028D8D05744A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F3ECF57-6039-45A9-8554-028D8D05744A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F3ECF57-6039-45A9-8554-028D8D05744A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7609DF9B-F57B-4856-8F04-ACBA6D4DA5AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7609DF9B-F57B-4856-8F04-ACBA6D4DA5AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7609DF9B-F57B-4856-8F04-ACBA6D4DA5AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7609DF9B-F57B-4856-8F04-ACBA6D4DA5AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,5 +75,6 @@ Global
 		{A93BD940-1EC6-4170-BD53-0BEC7485BF31} = {44ED194A-325A-43C6-B015-B680B975D518}
 		{E1BC3703-EA2B-445E-8438-3E70E992E71C} = {0353819C-FAA9-44EF-A968-F00C16D00429}
 		{2F3ECF57-6039-45A9-8554-028D8D05744A} = {0353819C-FAA9-44EF-A968-F00C16D00429}
+		{7609DF9B-F57B-4856-8F04-ACBA6D4DA5AF} = {0353819C-FAA9-44EF-A968-F00C16D00429}
 	EndGlobalSection
 EndGlobal
