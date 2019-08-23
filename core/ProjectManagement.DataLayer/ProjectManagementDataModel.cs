@@ -10,7 +10,7 @@ namespace ProjectManagement.DataLayer
         public ProjectManagementDataModel()
             : base("name=ProjectManagementDataModel")
         {
-            
+            //Database.Initialize(force: false);
         }
 
         public virtual DbSet<Project> Projects { get; set; }
@@ -19,7 +19,6 @@ namespace ProjectManagement.DataLayer
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            Database.Initialize(force: false);
 
             modelBuilder.Entity<Project>()
                 .HasMany(e => e.Tasks)
