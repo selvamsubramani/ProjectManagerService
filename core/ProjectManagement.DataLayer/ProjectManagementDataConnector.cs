@@ -10,6 +10,7 @@ namespace ProjectManagement.DataLayer
         public ProjectManagementDataConnector(ProjectManagementDataModel model)
         {
             _model = model;
+            _model.Database.Initialize(force: false);
         }
 
         private static readonly Lazy<ProjectManagementDataConnector> lazy = new Lazy<ProjectManagementDataConnector>(() => new ProjectManagementDataConnector(new ProjectManagementDataModel()));
@@ -24,7 +25,7 @@ namespace ProjectManagement.DataLayer
 
         #region Users
         public IQueryable<User> GetAllUsers()
-        {
+        {            
             return _model.Users;
         }
 
