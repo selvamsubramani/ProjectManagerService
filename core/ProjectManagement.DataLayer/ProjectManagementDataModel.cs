@@ -10,6 +10,7 @@ namespace ProjectManagement.DataLayer
         public ProjectManagementDataModel()
             : base("name=ProjectManagementDataModel")
         {
+            Database.Initialize(false);
         }
 
         public virtual DbSet<Project> Projects { get; set; }
