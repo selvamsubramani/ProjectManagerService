@@ -7,10 +7,12 @@ namespace ProjectManagement.DataLayer
 
     public partial class ProjectManagementDataModel : DbContext
     {
-        public ProjectManagementDataModel()
+        public ProjectManagementDataModel() { }
+
+        public ProjectManagementDataModel(bool force)
             : base("name=ProjectManagementDataModel")
         {
-            Database.Initialize(false);
+            Database.Initialize(force);
         }
 
         public virtual DbSet<Project> Projects { get; set; }

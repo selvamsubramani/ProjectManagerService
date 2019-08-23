@@ -12,7 +12,7 @@ namespace ProjectManagement.DataLayer
             _model = model;
         }
 
-        private static readonly Lazy<ProjectManagementDataConnector> lazy = new Lazy<ProjectManagementDataConnector>(() => new ProjectManagementDataConnector(new ProjectManagementDataModel()));
+        private static readonly Lazy<ProjectManagementDataConnector> lazy = new Lazy<ProjectManagementDataConnector>(() => new ProjectManagementDataConnector(new ProjectManagementDataModel(false)));
         public static ProjectManagementDataConnector Instance
         {
             get
